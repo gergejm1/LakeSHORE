@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lakeshore House Care</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="#">
+            <img id="logoImage" src="images/logoless.jpg" alt="Lakeshore House Care Logo">
+        </a>
+    
+        <nav>
+            <ul>
+                <li><a href="#" class="nav-link">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#pricing" class="nav-link">Pricing</a></li>
+                <li><a href="#about" class="nav-link">About Us</a></li>
+                <li><a href="#contact" class="nav-link">Contact Us</a></li> 
+                <li class="phone-container">
+                    <a href="tel:+13135027256" class="phone-number">
+                      <img src="images/phone.jpg" alt="Phone Icon" class="phone-icon"/> 
+                      (313)-889-3711
+                    </a>
+                  </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="mainpage">
+        <h1 class="quote">Inspiring <span id="changeWord" class="change-hover">Change</span>, one <span class="highlight">House</span> at a time</h1>
+        <div class="vertical-dashed-line"></div>
+        <div class="best-roofing">
+          
+           
+         
+            <!-- Removed buttons based on your request -->
+        </div>
+        <div class="quote-form-container">
+            <div class="form-header">
+                <h2>GET A FREE QUOTE!</h2>
+            </div>
+            <form action="https://getform.io/f/pbygxnvb" method="POST" class="quote-form">
+                <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+                <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <input type="tel" id="phone" name="phone" placeholder="Phone" required>
+                <select id="service" name="service" required>
+                    <option value="">Select a Service</option>
+                    <option value="roofCleaning">Roof Cleaning</option>
+                    <option value="gutterCleaning">Gutter Cleaning</option>
+                    <option value="treetrimming">Tree Trimming</option>
+                    <option value="Painting">Painting</option>
+                    <!-- Add other services here -->
+                </select>
+                <textarea id="message" name="message" placeholder="Your Message"></textarea>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="service-container">
+            <div class="service">
+                <img src="images/roofcleaning.jpg" alt="Roof Cleaning">
+                <h3>Roof Cleaning</h3>
+                <p>Professional roof cleaning to remove moss, algae, and debris.</p>
+            </div>
+            <div class="service">
+                <img src="images/guttercleaning.jpg" alt="Gutter Cleaning">
+                <h3>Gutter Cleaning</h3>
+                <p>Thorough gutter cleaning to ensure smooth drainage.</p>
+            </div>
+            <div class="service">
+                <img src="images/treetrimming.jpg" alt="Tree Trimming">
+                <h3>Tree Trimming</h3>
+                <p>Expert tree trimming for health and aesthetics.</p>
+            </div>
+            <div class="service">
+                <img src="images/painting.jpg" alt="Painting Services">
+                <h3>Painting Services</h3>
+                <p>High-quality finishes for a vibrant, fresh look.</p>
+            </div>
+        </div>
+    </section>
+    <section id="pricing">
+        <h2 class="section-title">Pricing</h2>
+        <div class="pricing-container">
+            <div class="calculator-container">
+                <h2>Pricing Calculator</h2>
+                <!-- Calculator content here -->
+                <label for="serviceSelection">Select a service:</label>
+                <select id="serviceSelection">
+                    <option value="">Select One</option>
+                    <option value="roofResidential">Roof Cleaning Residential</option>
+                    <option value="roofCommercial">Roof Cleaning Commercial</option>
+                    <option value="gutter">Gutter Cleaning</option>
+                    <option value="painting">Painting Services</option>
+                </select>
+            
+                 <!-- Roof Slope Selection -->
+            <div id="roofSlopeSection" style="display: none;">
+                <label for="roofSlope">Select Roof Slope:</label>
+                <select id="roofSlope">
+                    <!-- Options for Roof Slope -->
+                    <option value="2">2/12</option>
+                    <option value="3">3/12</option>
+                    <option value="4">4/12</option>
+                    <option value="5">5/12</option>
+                    <option value="6">6/12</option>
+                    <option value="7">7/12</option>
+                    <option value="8">8/12</option>
+                    <option value="9">9/12</option>
+                    <option value="10">10/12</option>
+                    <option value="11">11/12</option>
+                    <option value="12">12/12</option>
+                </select>
+            </div>
+
+            <!-- Painting Square Footage -->
+            <div id="paintingSection" style="display: none;">
+                <label for="wallSqFt">Wall square footage:</label>
+                <input type="number" id="wallSqFt" placeholder="Wall Sq Ft">
+                <label for="ceilingSqFt">Ceiling square footage:</label>
+                <input type="number" id="ceilingSqFt" placeholder="Ceiling Sq Ft">
+            </div>
+
+            <!-- General Square Footage Input -->
+            <div id="generalSquareFootageSection">
+                <label for="squareFootage">Enter your property's square footage:</label>
+                <input type="number" id="squareFootage" placeholder="Square footage">
+            </div>
+            <button id="calculateButton">Calculate</button>
+            <p>Estimated Price: $<span id="price"></span></p>
+            <p id="additionalGutterCost" style="display: none;">Additional Gutter Cost: $<span id="gutterCost"></span></p>
+            
+        </div>
+    </div>
+</section>
+<section id="about">
+    <h2 class="section-title">About Us</h2>
+    <div class="about-container">
+        <div class="about-content">
+            <h3>Making spaces functional and beautiful.</h3>
+            <p>At Lakeshore House Care, we believe that your home is more than just a place; it's where memories are made and cherished. Located in the heart of Detroit, 
+                MI, we specialize in providing top-notch roof cleaning and home care services that enhance both the beauty and longevity of your property. 
+                Our dedicated team of professionals is committed to delivering exceptional service, ensuring that every job is done right the first time. 
+                Whether you need roof cleaning, gutter maintenance, tree trimming, or painting services, we’ve got you covered. Our mission is to protect and beautify your home, 
+                one project at a time. Trust Lakeshore House Care to keep your home in pristine condition, allowing you to focus on what truly matters.
+
+            </p>
+        </div>
+        <div class="about-image">
+            <img src="images/cleaning2.jpeg" alt="Quality Roofing" />
+        </div>
+    </div>
+</section>
+<section id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-container">
+        
+        <div class="contact-card">
+            
+            <h3>PHONE NUMBER</h3>
+            <p>(313) 502-7256</p>
+        </div>
+        <div class="contact-card">
+            
+            <h3>EMAIL ADDRESS</h3>
+            <p>lakeshorehousec@gmail.com</p>
+        </div>
+
+    </div>
+</section>
+    <footer>
+        <p>© 2024 Lakeshore House Care</p>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Smooth Scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = targetId === '#' ? document.body : document.querySelector(targetId);
+    
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+    
+            // Fade-in Blur Effect
+            document.body.classList.add('fadeInBlur');
+
+            // Change word color on hover
+            const changeWord = document.getElementById('changeWord');
+            changeWord.addEventListener('mouseover', function() {
+                this.classList.add('change-hover-permanent');
+            });
+        });
+    </script>
+</body>
+</html>

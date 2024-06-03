@@ -1,0 +1,689 @@
+
+body {
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    color: #464449;
+    background-color: #f0f0f0;
+    margin: 0; /* Remove default margin */
+    padding-top: 0; /* Adjusted to remove extra space at the top */
+    
+}
+
+header {
+    display: flex;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000; 
+    background-color: #2e2e2e;
+    display: flex; /* Makes header a flex container */
+    align-items: center; /* Vertically centers the items */
+    justify-content: space-between; /* Distributes the space */
+    border-radius: 0; /* Adds rounded corners */
+    overflow: hidden; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Adds depth with shadow */
+    
+}
+
+#logoImage {
+    height: 80px; /* Adjust as needed */
+    width: auto; /* Maintain aspect ratio */
+    margin-right: auto;
+    margin-left:-50px;
+    filter: brightness(90%);
+}
+
+
+header img {
+    height: 150px; /* Adjust the size as needed */
+    margin-left: 10px;
+    
+}
+
+
+nav {
+    margin-left: 0; /* Adjust as needed */
+    flex-grow:1
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    align-items: center; /* Centers items vertically */
+    /* Ensure there's no extra space on the bottom of the ul or nav */
+  }
+
+nav ul li {
+    color: black;
+    text-decoration: none;
+    padding: 5px 10px;
+    margin: 0 15px; /* Space between items */
+}
+
+nav ul li a {
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 20px; /* Creates an oval shape */
+    background-color: transparent; /* Default background */
+    position: relative; /* Set position to relative for pseudo-element positioning */
+    overflow: hidden; /* Ensures the underline doesn't show when it's not supposed to */
+    transition: color 0.3s ease, transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for effects */
+}
+
+nav ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px; /* Height of the underline */
+    background: #DAA520; /* Gold color for the underline */
+    transition: width 0.3s; /* Smooth transition for the underline */
+    position: absolute;
+    bottom: -5px; /* Position the underline just below the link text */
+    left: 0;
+}
+
+nav ul li a:hover, nav ul li a:focus {
+    color: #DAA520; 
+    transform: scale(1.1);
+    /* text-decoration: underline; */ /* This line is commented out to remove the underline */
+    text-decoration-color: gold;  /* Reduces shadow to give a "pressed" effect */
+    color: white; /* Optional: Change text color on hover */
+}
+
+nav ul li a:hover::after, nav ul li a:focus::after {
+    width: 100%; /* Full width on hover/focus, creates the underline effect */
+}
+section {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #302D2D;
+    color: white;
+}
+
+
+.mainpage {
+    position: relative;
+    background-image: url('images/clean.jpg'); /* Correct path to your image */
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 0;
+    color: white;
+    height: 90vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainpage::before {
+    content: '';
+    position: absolute;
+    left: 50%; /* Adjust this value based on your design */
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+}
+
+.mainpage::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7); /* Black background with 50% opacity */
+    z-index: 0; /* Set z-index to 0 */
+}
+
+.quote, .subquote {
+    position: relative;
+    z-index: 1; /* Ensures text appears above the overlay */
+}
+.quote {
+    font-size: 4em; /* Adjust size as needed */
+    color: white;
+    margin: 0;
+    position: relative;
+    top: 10%; /* Center vertically */
+    transform: translateY(-50%); /* Align center with transform */
+}
+
+.subquote {
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 40px; /* Adjust size as needed */
+    color: #FFF; /* White color for text */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Text shadow for better readability */
+    margin-top: 0; /* Space from the top */
+    margin-bottom: 10px;
+    padding: 0 20px; /* Padding on the sides */
+    background-color: transparent; /* Transparent background */
+    border-left: 5px solid #D4AF37; /* Gold line to the left */
+    font-weight: bold; /* Bold font weight */
+    z-index: 2; /* Make sure it's above the background */
+    text-align: left; 
+    position: absolute;
+    top:20%;
+    left:5%;
+    margin: 0;
+    padding-left: 10px; /* Add padding to match the design */
+    border-left: 5px solid #FFA500; /* Orange border */
+}
+
+.highlight {
+    color: #D4AF37; /* This is the gold color */
+}
+
+@keyframes fadeInBlur {
+    from {
+        opacity: 0;
+        filter: blur(5px);
+    }
+    to {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+.fadeInBlur {
+    animation: fadeInBlur 1.5s ease-out forwards;
+}
+
+.contact-info {
+    background-color:#D4AF37;
+    border-radius: 10px; /* Rounded edges */
+    padding: 10px; /* Add some padding inside the box */
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 10px; /* Optional: adds space above the box */
+    display: inline-block; /* Adjusts the box to fit content */
+}
+
+.change-hover {
+    color: white; /* Default color */
+    transition: color 0.5s ease; /* Smooth transition for color change */
+}
+
+.change-hover:hover {
+    color: #D4AF37; /* Gold color on hover */
+}
+
+.change-hover-permanent {
+    color: #D4AF37; /* Gold color */
+}
+
+.service-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap; /* Ensures responsiveness */
+    margin: 20px 0;
+}
+
+.service {
+    flex-basis: 22%; /* Adjusts the width of each service - reduce for spacing */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Optional: adds subtle shadow */
+    padding: 15px;
+    margin: 10px 5px;
+    background-color: rgba(212, 175, 55, 0.6); /* Optional: background color for service box */
+    border-radius: 5px; /* Optional: rounded corners */
+    /* Other styling as needed */
+}
+
+.service img {
+    width: 100%; /* Adjust as needed */
+    border-radius: 10px; /* Rounded corners */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+.service:hover img {
+    filter: brightness(80%); /* Darkens the image on hover */
+}
+
+
+#pricing {
+    max-width: 1825px;
+    background-color: white; /* White background */
+    padding: 20px;
+    margin: 20px auto;
+    box-shadow: none; /* Remove the shadow for a flat appearance */
+}
+
+.pricing-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.pricing-description, .calculator-container {
+    flex-basis: 48%; /* Adjust as needed, ensuring both sections fit side by side */
+}
+
+.calculator-container {
+    background-color: rgba(212, 175, 55, 0.6); /* Semi-transparent gold color */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* 3D effect */
+    width: 50%; /* Cover only half of the section */
+    margin: 0 auto; /* Center the container */
+    box-sizing: border-box;
+    display: block;
+    margin-bottom: 10px;
+}
+#serviceSelection, #squareFootage {
+    width: 90%; /* Adjust width as needed */
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc; /* Light border for 3D effect */
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.2); /* Inward shadow for input fields */
+    background-color: white;
+}
+
+#calculateButton {
+    background-color: #D4AF37; /* Gold color */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#calculateButton:hover {
+    background-color: #b39442; /* Darker gold on hover */
+}
+
+.section-title {
+    font-size: 1.5em; /* Larger font size for the title */
+    text-align: left; /* Center the title */
+    margin-bottom: 20px; /* Space below the title */
+    margin-left: 20px;
+}
+
+.pricing-description{
+    margin-left:20px;
+}
+/* Adjust the font size of the content within the pricing section if needed */
+.pricing-container p, .pricing-container label, .pricing-container input, .pricing-container select, .pricing-container button {
+    font-size: 1em; /* Slightly larger font size */
+}
+
+
+
+.calculator-container label {
+    display: block;
+    /* Add other styles as needed */
+}
+
+#calculateButton:active {
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.2); /* Inward shadow for a pressed effect */
+    /* Other styles */
+}
+
+#calculateButton {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 20px; /* Adjust this value as needed */
+    /* Other styles */
+}
+
+#generalSquareFootageSection {
+    margin-top: 20px; /* Adjust this value as needed */
+}
+
+
+/* Style for Request Estimate Button */
+#requestEstimateButton {
+    background-color: white;
+    color: black;
+    /* Other styling similar to the calculate button */
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+}
+
+.closeButton {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.closeButton:hover,
+.closeButton:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.quote-form-container {
+    position: absolute;
+    top: 52%;  /* Adjust this value as needed */
+    right: 15%; /* Positions the form on the right; adjust as needed */
+    transform: translateY(-50%); /* Aligns it vertically */
+    width: 450px; /* Makes the form smaller; adjust as needed */
+    background-color:#2e2e2e; /* Semi-transparent background */
+    opacity: .95;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #D4AF37; /* Gold border */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5); /* Optional shadow for depth */
+    z-index: 2; /* Ensure it's above the background image */
+    transform: translateY(-50%);
+}
+
+.quote-form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.quote-form-container form input[type="submit"] {
+    /* ... existing styles ... */
+    background-color:  #D4AF37; /* Orange background color for the button */
+    color: white; /* Text color for the button */
+}
+
+.quote-form-container input[type="text"],
+.quote-form-container input[type="email"],
+.quote-form-container input[type="tel"],
+.quote-form-container select,
+.quote-form-container textarea {
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.quote-form-container input[type="submit"] {
+    background-color: #D4AF37; /* Gold color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.quote-form-container input[type="submit"]:hover {
+    background-color: #b39442; /* Darker gold on hover */
+}
+
+.best-roofing {
+    position: absolute;
+    top: 20%; /* Adjust as needed */
+    left: 5%; /* Adjust as needed */
+    color: white;
+    z-index: 2; /* To ensure it's above the background overlay */
+}
+
+.best-roofing-title {
+    font-size: 60px; /* Adjust as needed */
+    font-weight: bold;
+    margin-bottom: 0px;
+    line-height: 1.2;
+    text-align: left;
+    top: 10%; /* Adjust as needed */
+    left: 5%; /* Adjust as needed */
+    /* Add any additional styling here */
+}
+
+.best-roofing-description {
+    font-size: 20px;
+    max-width: 600px;
+    text-align: left;
+    position: absolute;
+    top: 105%; /* Adjust as needed */
+    left: 0%; /* Adjust as needed */
+}
+
+/* Style for the vertical dashed line */
+.vertical-dashed-line {
+    border-left: 3px dashed #FFD700; ; 
+    height: 16%; /* Adjust to match the height of the title */
+    position: absolute;
+    left: 4.5%; /* Adjust this to position the line correctly */
+    top: 26%; /* Adjust this to match the title's top position */
+}
+
+.quote-form-container form input,
+.quote-form-container form textarea {
+    /* ... existing styles ... */
+    margin-bottom: 10px; /* Spacing between form elements */
+    /* Add any additional styles required for inputs and textareas */
+}
+
+.form-header {
+    position: absolute;
+    top: -15px; /* Adjust this value as needed to position the header outside and above the form */
+    left: 0;
+    width: 100%;
+    text-align: center;
+    /* Add any other styling for the header text here, like background, padding, etc. */
+}
+
+.quote-form {
+    padding-top: 30px; /* Adjust this value so the form starts below the header text */
+    /* Rest of your form styles */
+}
+
+.service img {
+    width: 100%; /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 250px; /* Example fixed height - adjust as needed */
+    object-fit: cover; /* This will cover the area without stretching the image */
+    border-radius: 10px; /* Rounded corners */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+.phone-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+  
+  .phone-number {
+    color: white; /* Initial text color */
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  .phone-number:hover {
+    color: #D4AF37; /* Gold color on hover */
+  }
+  
+  .phone-icon {
+    width: 60px; /* Adjust the size as needed */
+    height: auto;
+    margin-right: -5px; /* Space between the icon and the number */
+  }
+
+  .section-title {
+    font-size: 1.5em; /* Adjust to match other titles */
+    color: #333; /* Title color */
+    padding-left: 20px; /* Align with other sections */
+    margin-top: 0;
+    text-align: left; /* Align text to the left */
+}
+
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #fff; /* or any light color you prefer */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+.about-content, .about-image {
+    flex: 1; /* Assign equal width */
+    padding: 10px; /* Spacing inside columns */
+}
+
+.about-content h3 {
+    margin-top: 0;
+    color: #333; /* Title color */
+    font-size: 2em; /* Size of the inner title */
+    margin-bottom: 20px; /* Space below the inner title */
+}
+
+.about-image img {
+    width: 100%; /* Responsive image width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners for image */
+}
+
+#contact {
+    background: white; /* White background for the entire section */
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners for the section */
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-around; /* Evenly space the cards */
+    flex-wrap: wrap; /* Wrap on smaller screens */
+}
+
+.contact-card {
+    background: #D4AF37; /* Gold background for cards */
+    color: white; /* White text for cards */
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px; /* Rounded corners for cards */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    flex-basis: 22%; /* Adjust the size as needed */
+    text-align: center; /* Center text */
+}
+
+.contact-card h3, .contact-card p {
+    margin: 5px 0; /* Spacing for text inside cards */
+}
+
+.contact-icon {
+    margin-bottom: 10px;
+}
+
+.contact-icon img {
+    width: 50px; /* Adjust as needed */
+}
+
+
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    #logoImage {
+        height: 60px;
+    }
+
+    nav ul li a {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 768px) {
+    .responsive-select {
+        font-size: 0.9em; /* Adjust the font size for smaller screens */
+        padding: 8px; /* Adjust padding for smaller screens */
+    }
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .quote {
+        font-size: 2em;
+    }
+
+    .subquote {
+        font-size: 1.2em;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .quote-form-container {
+        width: 90%;
+        right: 5%;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .service {
+        flex-basis: 100%;
+        margin: 10px 0;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .about-content, .about-image {
+        flex-basis: 100%;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .contact-card {
+        flex-basis: 100%;
+        margin: 10px 0;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    section {
+        padding: 10px;
+    }
+}
